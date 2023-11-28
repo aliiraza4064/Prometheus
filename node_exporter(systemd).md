@@ -25,7 +25,7 @@ Move binary to “/usr/local/bin” from the downloaded extracted package.
 
 Create a service file for the node exporter.
 
-> vim /etc/systemd/system/node_exporter.service
+> vi /etc/systemd/system/node_exporter.service
 
 Add the following content to the file.
 ```
@@ -74,7 +74,7 @@ Login to Prometheus server and modify the prometheus.yml file
 
 Edit the file:
 
-> vim /etc/prometheus/prometheus.yml
+> vi /etc/prometheus/prometheus.yml
 
 Add the following configurations under the scrape config.
 ```
