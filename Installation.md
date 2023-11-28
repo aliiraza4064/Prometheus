@@ -1,5 +1,5 @@
 
-## Install and Configure Prometheus on CentOS 7
+## Install and Configure Prometheus on Ubuntu
 
 Login to Terminal as root with ``sudo su`` and start firing the commands below.
 
