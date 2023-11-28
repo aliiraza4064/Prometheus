@@ -5,8 +5,7 @@ Login to Terminal as root with ``sudo su`` and start firing the commands below.
 
 ### Step 1 – Update System
 
-> apt update
-> apt upgrade -y
+> apt update && apt upgrade -y
 
 ### Step 2 – Disable SELinux
 
