@@ -15,7 +15,7 @@ Run the following command to download package. Paste the copied URL after wget i
 
 ### Step 4 – Configure Alertmanager
 
-Create a Prometheus user, required directories, and make prometheus user as the owner of those directories.
+Create a alertmanager user, required directories, and make alertmanager user as the owner of those directories.
 
 ```
 groupadd -f alertmanager
@@ -38,7 +38,7 @@ mv alertmanager-0.26.0.linux-amd64 alertmanager-files
 
 ### Step 6 - Install Prometheus AlertManager
 
-Copy alertmanager and amtool binary from prometheus-files folder to /usr/bin and change the ownership to prometheus user.
+Copy ``alertmanager`` and ``amtool`` binary from prometheus-files folder to ``/usr/bin`` and change the ownership to alertmanager user.
 
 ```
 cp alertmanager-files/alertmanager /usr/bin/
@@ -50,7 +50,7 @@ chown alertmanager:alertmanager /usr/bin/amtool
 
 ### Step 7 - Install Prometheus AlertManager Configuration File
 
-Move the alertmanager.yml file from alertmanager-files to the /etc/alertmanager folder and change the ownership to alertmanager user.
+Move the ``alertmanager.yml`` file from ``alertmanager-files`` to the ``/etc/alertmanager`` folder and change the ownership to alertmanager user.
 
 ```
 cp alertmanager-files/alertmanager.yml /etc/alertmanager/alertmanager.yml
@@ -60,7 +60,7 @@ chown alertmanager:alertmanager /etc/alertmanager/alertmanager.yml
 
 ### Step 8 - Setup Prometheus AlertManager Service
 
-Create an alertmanager service file.
+Create an ``alertmanager`` service file.
 > vi /usr/lib/systemd/system/alertmanager.service
 
 Add the following configuration and save the file.
@@ -86,14 +86,14 @@ WantedBy=multi-user.target
 
 ### Step 9 - Reload systemd and Register Prometheus AlertManager
 
-Reload the systemd service to register and Start the Prometheus AlertManager service.
+Reload the ``systemd`` service to register and Start the Prometheus AlertManager service.
 
 ```
 sudo systemctl daemon-reload
 sudo systemctl start alertmanager
 
 ```
-Check the alertmanager service status using the following command.
+Check the ``alertmanager`` service status using the following command.
 > systemctl status alertmanager
 
 Configure Prometheus AlertManager to start at boot.
@@ -106,6 +106,6 @@ sudo firewall-cmd --reload
 ```
 ### Step 9 - Access Prometheus AlertManager UI
 
-Now you will be able to access the AlertManager UI on 9093 port of the alertmanager server.
+Now you will be able to access the AlertManager UI on ``9093`` port of the alertmanager server.
 
 > http://<alertmanager-ip>:9093
