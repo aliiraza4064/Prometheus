@@ -4,15 +4,16 @@
 Login to Terminal as root with ``sudo su`` and start firing the commands below.
 
 ### Step 1 – Update System
-
-> apt update && apt upgrade -y
-
+```
+apt update && apt upgrade -y
+```
 ### Step 2 – Download Alertmanager package
 
 Go to official Prometheus [downloads page,](https://prometheus.io/download/) and copy the URL of Linux “tar” file.
 Run the following command to download package. Paste the copied URL after wget in the below command:
-> wget https://github.com/prometheus/alertmanager/releases/download/v0.26.0/alertmanager-0.26.0.linux-amd64.tar.gz
-
+```
+wget https://github.com/prometheus/alertmanager/releases/download/v0.26.0/alertmanager-0.26.0.linux-amd64.tar.gz
+```
 ### Step 4 – Configure Alertmanager
 
 Create a alertmanager user, required directories, and make alertmanager user as the owner of those directories.
@@ -61,8 +62,9 @@ chown alertmanager:alertmanager /etc/alertmanager/alertmanager.yml
 ### Step 8 - Setup Prometheus AlertManager Service
 
 Create an ``alertmanager`` service file.
-> vi /usr/lib/systemd/system/alertmanager.service
-
+```
+vi /usr/lib/systemd/system/alertmanager.service
+```
 Add the following configuration and save the file.
 ```
 [Unit]
@@ -82,7 +84,7 @@ ExecStart=/usr/bin/alertmanager \
 WantedBy=multi-user.target
 
 ```
-> chmod 664 /usr/lib/systemd/system/alertmanager.service
+```chmod 664 /usr/lib/systemd/system/alertmanager.service```
 
 ### Step 9 - Reload systemd and Register Prometheus AlertManager
 
@@ -94,10 +96,13 @@ sudo systemctl start alertmanager
 
 ```
 Check the ``alertmanager`` service status using the following command.
-> systemctl status alertmanager
-
+```
+systemctl status alertmanager
+```
 Configure Prometheus AlertManager to start at boot.
-> systemctl enable alertmanager.service
+```
+systemctl enable alertmanager.service
+```
 If firewalld is enabled and running, add a rule for port 9093.
 ```
 sudo firewall-cmd --permanent --zone=public --add-port=9093/tcp
