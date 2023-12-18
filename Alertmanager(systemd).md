@@ -84,6 +84,8 @@ ExecStart=/usr/bin/alertmanager \
 WantedBy=multi-user.target
 
 ```
+change ownership
+
 ```chmod 664 /usr/lib/systemd/system/alertmanager.service```
 
 ### Step 9 - Reload systemd and Register Prometheus AlertManager
