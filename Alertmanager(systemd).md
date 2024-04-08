@@ -1,5 +1,5 @@
 
-## Install and Configure Alertmanager on Ubuntu
+## Install and Configure Alertmanager on Ubuntu.
 
 Login to Terminal as root with ``sudo su`` and start firing the commands below.
 
