@@ -1,4 +1,3 @@
-
 # Installation of Node-exporter on systemd
 
 First, you need to configure Prometheus node exporter on a Linux server.
@@ -9,11 +8,11 @@ Copy URL of the Node Exporter form the official [download page.](https://prometh
 
 Paste the copied URL after wget in the following command:
 
-wget https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-amd64.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/v1.10.2/node_exporter-1.10.2.linux-amd64.tar.gz
 
 Extract the downloaded package.
 
-> tar -xvzf node_exporter-1.7.0.linux-amd64.tar.gz
+> tar -xvzf node_exporter-1.10.2.linux-amd64.tar.gz
 
 Create a user for the node exporter.
 
@@ -21,7 +20,7 @@ Create a user for the node exporter.
 
 Move binary to “/usr/local/bin” from the downloaded extracted package.
 
-> mv node_exporter-1.7.0.linux-amd64/node_exporter /usr/local/bin/
+> mv node_exporter-1.10.2.linux-amd64/node_exporter /usr/local/bin/
 
 Create a service file for the node exporter.
 
